@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @corrupt.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @corrupt.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_corrupt_path(@corrupt) %> |
+<%= link_to 'Back', corrupts_path %>

@@ -1,0 +1,25 @@
+<h1>Listing corrupts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @corrupts.each do |corrupt| %>
+  <tr>
+    <td><%= corrupt.name %></td>
+    <td><%= corrupt.description %></td>
+    <td><%= link_to 'Show', corrupt %></td>
+    <td><%= link_to 'Edit', edit_corrupt_path(corrupt) %></td>
+    <td><%= link_to 'Destroy', corrupt, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Corrupt', new_corrupt_path %>
