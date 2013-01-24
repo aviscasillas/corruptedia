@@ -1,4 +1,6 @@
 class CorruptsController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /corrupts
   # GET /corrupts.json
   def index
