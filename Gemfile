@@ -19,6 +19,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem "mongoid-rspec"
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
@@ -39,3 +44,4 @@ gem 'jquery-rails'
 gem 'mongoid'
 gem 'bson_ext'
 gem 'devise'
+gem 'better_errors'
