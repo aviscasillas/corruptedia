@@ -1,13 +1,13 @@
 <h1>Listing corrupts</h1>
 
-<table>
-  <tr>
+<table class="twelve">
+  <thead>
     <th>Name</th>
     <th>Description</th>
     <th></th>
     <th></th>
     <th></th>
-  </tr>
+  </thead>
 
 <% @corrupts.each do |corrupt| %>
   <tr>
@@ -20,6 +20,5 @@
 <% end %>
 </table>
 
-<br />
 
-<%= link_to 'New Corrupt', new_corrupt_path %>
+<%= link_to 'Add Corrupt', new_corrupt_path, class: 'button' %>
