@@ -1,18 +1,88 @@
 <!DOCTYPE html>
-<html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-  <title>Corruptedia</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <meta charset="utf-8" />
+
+  <!-- Uncomment to make IE8 render like IE7 -->
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Corruptedia - <%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+  <!-- Included CSS Files -->
+  <%= stylesheet_link_tag    "application" %>
+
+  <!-- Included JS Files  -->
   <%= javascript_include_tag "application" %>
+
   <%= csrf_meta_tags %>
+
+  <%= render 'layouts/ga' if Rails.env.production? %>
+
 </head>
 <body>
+  <div id="top-bar" class="contain-to-grid">
+    <nav class="top-bar">
+      <ul>
+        <li class="name"><h1><%= link_to 'Corruptedia', '/' %></h1></li>
+        <li class="toggle-topbar"><a href="#"></a></li>
+      </ul>
+      <section>
+        <ul class="left">
+        </ul>
 
-<% flash.each do |key, value| %>
-  <%= content_tag(:div, value, :class => "flash #{key}") %>
-<% end %>
+        <ul class="right">
+          <% if user_signed_in? %>
+            <li><%= link_to current_user, user_path(current_user.id) %></li>
+            <li><%= link_to 'Account', edit_user_registration_path(current_user.id) %></li>
+            <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+          <% else %>
+            <li><a href="<%= user_session_path %>">Sign In</a></li>
+            <li><a href="<%= new_user_registration_url %>">Sign Up</a></li>
+          <% end %>
+        </ul>
+      </section>
+    </nav>
+  </div>
 
-<%= yield %>
+
+  <header id="header">
+    <div class="row">
+      <div class="twelve columns">
+        <h2><%= yield(:page_title) %></h2>
+        <h4 class="subheader"><%= yield(:page_tagline) %></h4>
+      </div>
+    </div>
+  </header>
+
+  <section id="main-content">
+    <div class="row">
+      <div class="twelve columns">
+
+        <% flash.each do |name, message| %>
+          <%= content_tag :div, :id => "flash_#{name}", :class => "alert-box #{name}" do %>
+            <%= message %>
+            <a class="close">x</a>
+          <% end %>
+        <% end %>
+
+        <%= yield %>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="row">
+    <section class="twelve columns">
+      <p><strong>¿Qué es Corruptedia?</strong> Una enciclopedia de corruptos.</p>
+    </section>
+  </footer>
 
 </body>
 </html>
