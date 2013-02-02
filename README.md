@@ -1,4 +1,5 @@
-<h1>Corruptedia</h1>
-===========
+# Corruptedia
 
-The corrupt encyclopedia...
+[![Build Status](https://travis-ci.org/aviscasillas/corruptedia.png)](https://travis-ci.org/aviscasillas/corruptedia)
+
+La enciclopedia de gente corrupta.
