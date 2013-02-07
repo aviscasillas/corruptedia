@@ -1,4 +1,4 @@
-class CorruptCase
+class Education
   include Mongoid::Document
   field :name
   field :description
