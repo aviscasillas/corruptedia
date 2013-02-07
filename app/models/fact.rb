@@ -5,4 +5,6 @@ class Fact
 
   validates :name, presence: true
   validates :description, presence: true
+
+  has_many :links
 end

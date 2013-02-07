@@ -4,4 +4,6 @@ class Person
   field :description
 
   validates :name, presence: true
+
+  has_many :links
 end

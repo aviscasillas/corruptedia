@@ -24,7 +24,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem "mongoid-rspec"
+  gem 'mongoid-rspec'
 end
 
 gem 'jquery-rails'
