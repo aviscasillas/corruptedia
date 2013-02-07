@@ -47,4 +47,7 @@ gem 'jquery-rails'
 gem 'mongoid'
 gem 'bson_ext'
 gem 'devise'
+
+# Error visulization
 gem 'better_errors'
+gem "binding_of_caller"

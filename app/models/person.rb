@@ -1,4 +1,4 @@
-class Corrupt
+class Person
   include Mongoid::Document
   field :name
   field :description
