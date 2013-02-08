@@ -6,4 +6,5 @@ class Sack
   validates :name, presence: true
 
   has_many :links
+  has_many :facts
 end
