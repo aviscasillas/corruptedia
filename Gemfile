@@ -48,8 +48,11 @@ gem 'mongoid'
 gem 'bson_ext'
 gem 'devise'
 
-group :development, :test do
+group :development do
   # Error visulization
   gem 'better_errors'
   gem "binding_of_caller"
+
+  # For rails_panel 
+  gem 'meta_request', '0.2.1'
 end
