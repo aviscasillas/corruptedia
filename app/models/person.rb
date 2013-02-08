@@ -6,7 +6,6 @@ class Person
   validates :name, presence: true
 
   has_many :links
-  has_many :entities
-  has_one :role
+  has_many :roles
   has_and_belongs_to_many :facts
 end
