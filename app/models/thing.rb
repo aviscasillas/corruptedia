@@ -1,10 +1,9 @@
-class Sack
+class Thing
   include Mongoid::Document
   field :name
-  field :description
 
   validates_presence_of :name
 
-  has_many :links
-  has_many :things
+  belongs_to :sack
+  has_many :actions
 end

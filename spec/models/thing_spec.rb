@@ -1,8 +1,7 @@
 require 'spec_helper'
 
-describe Person do
+describe Thing do
   it { should validate_presence_of :name }
-  it { should have_many :links }
-  it { should have_many :roles }
+  it { should belong_to  :sack }
   it { should have_many :actions }
 end

@@ -7,5 +7,5 @@ class Person
 
   has_many :links
   has_many :roles
-  has_and_belongs_to_many :facts
+  has_many :actions
 end
