@@ -48,6 +48,8 @@ gem 'mongoid'
 gem 'bson_ext'
 gem 'devise'
 
-# Error visulization
-gem 'better_errors'
-gem "binding_of_caller"
+group :development, :test do
+  # Error visulization
+  gem 'better_errors'
+  gem "binding_of_caller"
+end
