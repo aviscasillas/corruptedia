@@ -1,0 +1,3 @@
+if (!$('#links').find('form')[0]) {
+	$('#links').append('<%=escape_javascript(render("form")) %>');	
+}

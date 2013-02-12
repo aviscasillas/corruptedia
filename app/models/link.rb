@@ -3,4 +3,6 @@ class Link
   field :url
 
   validates :url, presence: true
+
+  belongs_to :binding, polymorphic: true
 end

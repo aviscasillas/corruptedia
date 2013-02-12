@@ -8,6 +8,7 @@ class PeopleController < ApplicationController
   end
 
   def show
+    @links = @person.links
   end
 
   def new
