@@ -5,4 +5,5 @@ describe Person do
   it { should have_many :links }
   it { should have_many :roles }
   it { should have_many :actions }
+  it { should embed_many :educations}
 end
