@@ -10,11 +10,16 @@ class LinksController < ApplicationController
 
   def create
 
-    if @link.save
-      redirect_to @link, :notice => 'Person was successfully created.'
-    else
-      render :action => "new"
-    end
+    parent = eval(@link.parent_model).find(@link.parent_id)
+    parent.links << @link
+    
+    @links = parent.links
+    render :action => "update"
+    #if @link.save
+    #  redirect_to @link, :notice => 'Person was successfully created.'
+    #else
+    #  render :action => "new"
+    #end
   end
 
   protected

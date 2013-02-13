@@ -5,4 +5,4 @@
 class @Links
 
 	@new: () ->
-		$.getScript('/links/new?link[binding_id]=' + $('#binding_id').val() );
+		$.getScript('/links/new');
