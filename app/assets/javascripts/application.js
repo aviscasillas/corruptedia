@@ -5,7 +5,8 @@
 $(function(){
 	alert(1);
 	$('.bt-add-link').on('click', function() {
-		Links.new();
+		//Links.new();
+		alert(2);
 		return false;
 	});
 });
