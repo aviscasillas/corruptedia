@@ -1,0 +1,18 @@
+<h1>Listing persons</h1>
+
+<table class="twelve">
+  <thead>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </thead>
+
+	<% for person in @people.models: %>
+	  <tr>
+	    <td><%= person.get('name') %></td>
+	    <td><%= person.get('description') %></td>
+	  </tr>
+	<% end %>
+</table>

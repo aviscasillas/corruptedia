@@ -1,14 +1,16 @@
 class PeopleController < ApplicationController
-  before_filter :authenticate_user!, :except => :show
+
+  respond_to :json
+
+  #before_filter :authenticate_user!, :except => :show
   before_filter :find_person, :except => [:index, :new, :create]
   before_filter :new_person, :only => [:new, :create]
 
   def index
-    @people = Person.all
+    respond_with Person.all
   end
 
   def show
-    @links = @person.links
   end
 
   def new
@@ -41,11 +43,11 @@ class PeopleController < ApplicationController
   protected
 
   def find_person
-    @person = Person.find(params[:id])
+    respond_with Person.find(params[:id])
   end
 
   def new_person
-    @person = Person.new(params[:person])
+    respond_with Person.new(params[:person])
   end
 
 end
