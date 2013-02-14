@@ -2,11 +2,11 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
-$(function(){
+alert(0);
+/*$(function(){
 	alert(1);
 	$('.bt-add-link').on('click', function() {
-		//Links.new();
-		alert(2);
+		Links.new();
 		return false;
 	});
-});
+});*/
