@@ -5,7 +5,7 @@ window.Corruptedia =
   Routers: {}
   initialize: -> 
   	new Corruptedia.Routers.People()
-  	Backbone.history.start()
+  	Backbone.history.start(pushState: true)
 
 $(document).ready ->
   Corruptedia.initialize()

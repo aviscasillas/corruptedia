@@ -1,0 +1,2 @@
+<a class='show'><%= @person.get('name') %></a>
+<a class='destroy'>delete</a>

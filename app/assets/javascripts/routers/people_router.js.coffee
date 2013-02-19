@@ -12,4 +12,5 @@ class Corruptedia.Routers.People extends Backbone.Router
 		$('#container').html(view.render().el)
 
 	show: (id) ->
-		alert "Person #{id}"
+		view = new Corruptedia.Views.PeopleShow(model: @collection.get(id))
+		$('#container').html(view.render().el)

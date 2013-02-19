@@ -11,43 +11,39 @@ class PeopleController < ApplicationController
   end
 
   def show
+    respond_with @person
   end
 
   def new
+    respond_with @person
   end
 
   def edit
   end
 
   def create
-    if @person.save
-      redirect_to @person, :notice => 'Person was successfully created.'
-    else
-      render :action => "new"
-    end
+    @person.save
+    respond_with @person
   end
 
   def update
-    if @person.update_attributes(params[:person])
-      redirect_to @person, :notice => 'Person was successfully updated.'
-    else
-      render :action => "edit"
-    end
+    @person.update_attributes(params[:person])
+    respond_with @person
   end
 
   def destroy
     @person.destroy
-    redirect_to people_url
+    respond_with @person
   end
 
   protected
 
   def find_person
-    respond_with Person.find(params[:id])
+    @person = Person.find(params[:id])
   end
 
   def new_person
-    respond_with Person.new(params[:person])
+    @person = Person.new(params[:person])
   end
 
 end
