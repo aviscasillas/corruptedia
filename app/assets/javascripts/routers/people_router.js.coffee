@@ -1,6 +1,7 @@
 class Corruptedia.Routers.People extends Backbone.Router
 	routes:
 		'': 'index'
+		'people': 'index'
 		'people/:id': 'show'
 
 	initialize: ->
@@ -12,5 +13,6 @@ class Corruptedia.Routers.People extends Backbone.Router
 		$('#container').html(view.render().el)
 
 	show: (id) ->
-		view = new Corruptedia.Views.PeopleShow(model: @collection.get(id))
-		$('#container').html(view.render().el)
+		@collection.fetch success: =>
+			view = new Corruptedia.Views.PeopleShow(model: @collection.get(id))
+			$('#container').html(view.render().el)
