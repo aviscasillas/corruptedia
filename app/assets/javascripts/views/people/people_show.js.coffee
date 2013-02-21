@@ -3,9 +3,9 @@ class Corruptedia.Views.PeopleShow extends Backbone.View
 	template: JST['people/show']
 
 	events: 
-		'click a.edit-description': 'editDescription'
-		'click a.show-description': 'showDescription'
-		'submit #description .form form': 'updatePerson'
+		'click a.edit': 'edit'
+		'click a.show': 'show'
+		'submit form': 'save'
 
 	initialize: ->
 		_.bindAll(this)
@@ -15,18 +15,23 @@ class Corruptedia.Views.PeopleShow extends Backbone.View
 		this.$el.find('.form').hide()
 		this
 
-	editDescription: ->
-		$('#description .form').show()
-		$('#description p').hide()
+	edit: (ev) ->
+		field = $(ev.target).data('field')
+		$("##{field} .form").show()
+		$("##{field} p").hide()
 
-	showDescription: ->
-		$('#description .form').hide()
-		$('#description p').show()
+	show: (ev) ->
+		field = $(ev.target).data('field')
+		$("##{field} .form").hide()
+		$("##{field} p").html($("##{field} .input-field").val())
+		$("##{field} p").show()
 
-	updatePerson: ->
+	save: (ev) ->
 		event.preventDefault()
-		@model.set('description', $('#description_field').val())
+		field = $(ev.target).data('field')
+		@model.set(field, $("##{field} .input-field").val())
 		@model.save {},
+			field: field
 			wait: true
 			success: @handleSuccess
 			error: @handleError
@@ -37,6 +42,5 @@ class Corruptedia.Views.PeopleShow extends Backbone.View
 			for attribute, messages of errors
 				alert "#{attribute} #{message}" for message in messages
 
-	handleSuccess: (person, response) ->
-		$('#description p').html(person.get("description"))
-		this.showDescription()
+	handleSuccess: (person, response, options) ->
+		this.show target: $("##{options.field} a.show")

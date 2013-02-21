@@ -3,11 +3,11 @@
 <div id='description'>
 	<p><%= @person.get('description') %></p>
 	<div class='form'>
-		<form>
-			<textarea id="description_field"></textarea>
+		<form data-field='description'>
+			<textarea class="input-field"><%= @person.get('description') %></textarea>
 			<input type="submit" value="Save">
-			<a class='show-description'>X</a>
+			<a class='show' data-field='description'>X</a>
 		</form>
 	</div>
-	<a class='edit-description'>Edit</a>
+	<a class='edit' data-field='description'>Edit</a>
 </div>
