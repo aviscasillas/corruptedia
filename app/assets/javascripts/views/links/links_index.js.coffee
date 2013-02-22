@@ -32,7 +32,7 @@ class Corruptedia.Views.LinksIndex extends Backbone.View
 
   createLink: (event) ->
     event.preventDefault()
-    attributes = url: $('#new_link_url').val(), parent_id: @collection.parent.get('_id'), parent_model: @collection.parent.constructor.name
+    attributes = url: $('#new_link_url').val(), parent_id: @collection.parent.get('_id'), parent_model: @collection.parent.className
     @collection.create attributes,
       wait: true
       success: @handleSuccess
