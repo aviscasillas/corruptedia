@@ -12,8 +12,13 @@ class Corruptedia.Views.PeopleShow extends Backbone.View
 
 	render: ->
 		this.$el.html(@template(person: @model))
+		this.renderLinks(this)
 		this.$el.find('.form').hide()
 		this
+
+	renderLinks: ->
+		viewLinks = new Corruptedia.Views.LinksIndex(collection: @model.links)
+		this.$el.find('#links_view').append(viewLinks.render().el)
 
 	edit: (ev) ->
 		field = $(ev.target).data('field')

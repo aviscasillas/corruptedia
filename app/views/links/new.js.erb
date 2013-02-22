@@ -1,5 +1,0 @@
-if (!$('#links').find('form')[0]) {
-	$('#links').append('<%=escape_javascript(render("form")) %>');	
-	$('#link_parent_model').val($('#parent').data('model'));
-	$('#link_parent_id').val($('#parent').data('id'));
-}

@@ -1,0 +1,2 @@
+<%= @link.get('url') %>
+<a class='destroy'>X</a>
