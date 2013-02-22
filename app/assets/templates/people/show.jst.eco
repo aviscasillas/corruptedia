@@ -9,7 +9,7 @@
 			<a class='show' data-field='description'>X</a>
 		</form>
 	</div>
-	<a class='edit' data-field='description'>Edit</a>
+	<a class='edit' data-field='description'>Edit description</a>
 </div>
 
 <br/><br/>
