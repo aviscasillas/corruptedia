@@ -57,5 +57,5 @@ gem 'jquery-rails'
 gem 'mongoid'
 gem 'bson_ext'
 gem 'devise'
-
 gem 'backbone-on-rails'
+gem 'copycopter_client', '~> 2.0.1'
