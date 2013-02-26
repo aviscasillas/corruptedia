@@ -1,4 +1,6 @@
-<h1>Listing people</h1>
+<h1>
+	<%= I18n.t("people.title") %>
+</h1>
 
 <form id="new_person">
   <input type="text" name="name" id="new_person_name">

@@ -20,12 +20,19 @@
 
   <!-- Included JS Files  -->
   <%= javascript_include_tag "application" %>
+  <%= phrase_javascript %>
 
   <%= csrf_meta_tags %>
 
   <%= render 'layouts/ga' if Rails.env.production? %>
 
+  <script type="text/javascript">
+    I18n.defaultLocale = "<%= I18n.default_locale %>";
+    I18n.locale = "<%= I18n.locale %>";
+  </script>
+
 </head>
+
 <body>
   <div id="top-bar" class="contain-to-grid">
     <nav class="top-bar">
@@ -80,7 +87,8 @@
 
   <footer id="footer" class="row">
     <section class="twelve columns">
-      <p><strong><%= t('main.what_is_corrputedia', :default => '¿Qué es Corruptedia?') %></strong> <%= t('main.corruptedia_is', :default => 'Una enciclopedia de corruptos') %>.</p>
+      <p><strong><%= t 'main.what_is_corrputedia' %></strong> <%= t 'main.corruptedia_is' %>.</p>
+      <%= t 'main.hola' %>
     </section>
   </footer>
 
