@@ -26,7 +26,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'mongoid-rspec'
 end
-
+group :test do
+  gem "shoulda-matchers"
+end
 group :development do
   # Error visulization
   gem 'better_errors'
@@ -60,3 +62,4 @@ gem 'devise'
 gem 'backbone-on-rails'
 gem 'phrase'
 gem 'i18n-js'
+gem 'newrelic_rpm'

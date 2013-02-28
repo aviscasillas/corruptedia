@@ -6,7 +6,7 @@ class Person
 
   validates :name, presence: true
 
-  has_many :links
+  has_many :links, dependent: :destroy
   has_many :roles
   has_many :actions
   embeds_many :educations

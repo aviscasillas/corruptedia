@@ -1,12 +1,8 @@
 require 'spec_helper'
 
 describe PeopleController do
-
-  describe "GET 'index'" do
-    it "returns http success" do
-      #get 'index'
-      #response.should be_success
-    end
+	context "#index" do
+		before { get :index, :format => :json }
+    it { should respond_with :success }
   end
-
 end
