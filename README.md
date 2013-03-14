@@ -8,6 +8,7 @@ La enciclopedia de gente corrupta.
 
 * **Ruby on Rails** backend MVC framework.
 * **Backbone.js** frontend MV* framework.
-* **ZURB Foundation 4** styling and responsive grid system.
+* **ZURB Foundation** styling and responsive grid system.
 * **Travis CI** continuous integration.
 * **[New Relic](https://newrelic.com)** app performance monitoring.
+* **Phrase App** i18n manager.
