@@ -9,6 +9,6 @@ La enciclopedia de gente corrupta.
 * **Ruby on Rails** backend MVC framework.
 * **Backbone.js** frontend MV* framework.
 * **ZURB Foundation** styling and responsive grid system.
-* **Travis CI** continuous integration.
+* **[Travis CI](https://travis-ci.org/aviscasillas/corruptedia)** continuous integration.
 * **[New Relic](https://newrelic.com)** app performance monitoring.
-* **Phrase App** i18n manager.
+* **[Phrase App](https://phraseapp.com/)** i18n manager.
